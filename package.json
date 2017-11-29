@@ -1,0 +1,45 @@
+{
+  "name": "test2api",
+  "version": "1.0.0",
+  "description": "api project2",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "errorhandler": "^1.5.0",
+    "eslint": "^4.11.0",
+    "express": "^4.16.2",
+    "express-jwt": "^5.3.0",
+    "express-session": "^1.15.6",
+    "find-or-create": "^1.1.0",
+    "js-yaml": "^3.10.0",
+    "jsonwebtoken": "^8.1.0",
+    "method-override": "^2.3.10",
+    "methods": "^1.1.2",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.9.9",
+    "mongoose-find-one-or-create": "^0.2.0",
+    "mongoose-find-or-create": "^1.3.1",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "passport-oauth2": "^1.4.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "slug": "^0.9.1",
+    "swagger": "^0.7.5"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
+  "scripts": {
+    "server": "node server.js"
+  },
+  "author": "Michalik",
+  "license": "ISC"
+}

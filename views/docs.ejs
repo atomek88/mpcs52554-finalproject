@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <% include ./partials/head %>
+    </head>
+        <body class="container">
+          <header>
+          <% include ./partials/navbar %>
+        </header>
+
+    <div class="separator">
+        <h1 style="color: blue">API Documentation</h1>
+        <div class="container">
+          <h2>DOCUMENTATION (please sign up for an account to get an api key)</h2>
+          <ul class="list-group">
+    <li class="list-group-item">Sign up for an account - your api key will be located on the HOME page. You will be redirected to GITHUB for authentication</li>
+    <li class="list-group-item">API Keys are secure (without a proper key the request will fail), the /api methods returns can be seen in browser but serve as backend services to provide you information about your warehouse items</li>
+    <li class="list-group-item">Send requests via browser or HTTP tools to check inventory status using api_key and the methods/endpoints below</li>
+  </ul>
+          <p>The following endpoints are available for use with the api key provided on your Home page</p>
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>METHOD</th>
+                <th>URL Enpoint</th>
+                <th>Expected Behavior</th>
+                <th>Requirements</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GET</td>
+                <td>/api/inventory</td>
+                <td>Returns the user's list of inventory items (along with item information) in JSON</td>
+                <td>Require: pass <span>api_key</span> to the URL as query parameter</td>
+              </tr>
+              <tr>
+                <td>GET</td>
+                <td>/api/inventory/{SKU}</td>
+                <td>Finds by SKU and returns the user's item (along with item information) in JSON</td>
+                <td>Require: pass <span>api_key=YOURAPI</span> and <span>SKU=REQSKU</span>to the URL as query parameter</td>
+                <img src='/apiorders.png' class="img-rounded">
+
+              </tr>
+              <tr>
+                <td>POST</td>
+                <td>/api/inventory/</td>
+                <td>Inventory replenishment, user can upload new inventory items. Users can add inventory 0 < QTY < 1000 units</td>
+                <td>Require: pass <span>api_key=YOURAPI</span> and to the URL as query parameter
+                require an json object holding an array of items that need replenishment ({items: [ {...},{...} - see example)</td>
+                <img src="/postInv.png" class="img-rounded">
+              </tr>
+              <tr>
+                <td>POST</td>
+                <td>/api/orders</td>
+                <td>Finds by SKU and returns the user's item (along with item information) in JSON</td>
+                <td>Require: pass <span>api_key=YOURAPI</span> to the URL as query parameter. See below body object</td>
+              </tr>
+              <tr>
+                <td>POST</td>
+                <td>/api/notifications</td>
+                <td>adds a URL to the User account. This subscribes to notifications on item updates/post requests</td>
+                <td>Require: pass <span>api_key=YOURAPI</span> to the URL as query parameter. Include <span>Address: "Your address"</span> in JSON body</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+    </div>
+  </body>
+</html>
